@@ -43,6 +43,7 @@ window.WEDDING_CONFIG = {
       date: "25th November",
       time: "Starting from 3:00 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
+      attire: "Yellow, beige, or light green festive Indian attire.",
       description:
         "A joyful afternoon of haldi, mehendi, music, laughter, color, and blessings as we begin our wedding celebrations."
     },
@@ -52,6 +53,7 @@ window.WEDDING_CONFIG = {
       date: "26th November",
       time: "11:55 AM to 1:25 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
+      attire: "Festive Indian / traditional wedding attire.",
       description:
         "With love, joy, and blessings, we invite you to witness our Hindu wedding ceremony and celebrate the beginning of our married life."
     }
