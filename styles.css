@@ -286,7 +286,14 @@ a {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(216, 182, 107, 0.52);
 }
-
+.ivory-section .btn-secondary,
+.details-section .btn-secondary,
+.details-actions .btn-secondary {
+  color: #5b0f1b;
+  background: #fff9ef;
+  border: 2px solid #5b0f1b;
+  box-shadow: 0 10px 26px rgba(91, 15, 27, 0.18);
+}
 .section {
   padding: clamp(64px, 9vw, 110px) 18px;
 }
