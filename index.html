@@ -3,220 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Divya and Nandan Wedding Invitation" />
-  <title>Divya & Nandan | Wedding Invitation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Divya & Nandan Wedding Invitation</title>
+  <meta name="description" content="Wedding invitation for Divya and Nandan" />
+
   <link rel="stylesheet" href="styles.css" />
+  <script src="wedding-config.js"></script>
 </head>
+
 <body>
-  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="hero section">
+      <div class="hero-card">
+        <p class="blessing" data-config="blessing">|| Shree Ganeshaya Namah ||</p>
+        <div class="om-symbol">ॐ</div>
 
-  <audio id="weddingMusic" loop>
-    <source src="wedding-music.mp3" type="audio/mpeg" />
-  </audio>
-  <button class="music-toggle" id="musicToggle" type="button">♪ Play Music</button>
+        <p class="hero-kicker">Khandate and Kamat Families</p>
 
-  <header class="site-header">
-    <a href="#home" class="logo">D & N</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="navMenu">
-      <a href="#home">Home</a>
-      <a href="#invite">Invitation</a>
-      <a href="#events">Events</a>
-      <a href="#rsvp">RSVP</a>
-      <a href="#details">Details</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="fabric fabric-one"></div>
-      <div class="fabric fabric-two"></div>
-
-      <div class="hero-content reveal">
-        <p class="hero-blessing" data-config="blessing">|| Shree Ganeshaya Namah ||</p>
-        <div class="hero-om">ॐ</div>
-        <p class="hero-kicker">Together with our families</p>
-
-        <h1>
+        <h1 class="couple-names">
           <span data-config="brideName">Divya</span>
-          <span class="amp">and</span>
+          <span class="name-and">and</span>
           <span data-config="groomName">Nandan</span>
         </h1>
 
-        <p class="hero-date" data-config="heroDateLine">request the pleasure of your company on 26th November</p>
+        <p class="hero-date-line" data-config="heroDateLine">
+          We request the pleasure of your company on 26th November 2026 to celebrate the wedding of our beloved daughter and son
+        </p>
 
-        <div class="countdown" aria-label="Wedding countdown">
-          <div><strong id="days">00</strong><span>Days</span></div>
-          <div><strong id="hours">00</strong><span>Hours</span></div>
-          <div><strong id="minutes">00</strong><span>Minutes</span></div>
-          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        <div class="date-badge">
+          <span data-config="weddingMonth">November</span>
+          <strong data-config="weddingDay">26</strong>
+          <span data-config="weddingYear">2026</span>
         </div>
+
+        <p class="wedding-time" data-config="weddingTimeDisplay">11:55 AM to 1:25 PM</p>
+        <p class="wedding-city" data-config="weddingCity">McKinney, Texas</p>
 
         <div class="hero-actions">
-          <a href="#invite" class="btn btn-primary">Open Invitation</a>
-          <a href="#rsvp" class="btn btn-secondary">RSVP Now</a>
-          <button type="button" class="btn btn-secondary" id="copyInviteLink">Copy Invite Link</button>
-        </div>
-        <p class="copy-status" id="copyStatus" role="status"></p>
-      </div>
-    </section>
-
-    <section id="invite" class="invite-section">
-      <div class="section-shell reveal">
-        <div class="section-heading">
-          <p class="section-tag">Wedding Invitation</p>
-          <h2>A celebration of love, family, and blessings</h2>
-          <p>With joy and gratitude, we invite you to be part of our wedding celebration. Your presence and blessings would make this occasion complete.</p>
-        </div>
-
-        <div class="invite-card-wrap">
-          <button class="envelope-card" id="openCardButton" aria-label="Open wedding invitation">
-            <span class="envelope-top"></span>
-            <span class="envelope-pattern pattern-top"></span>
-            <span class="seal" data-config="initials">D & N</span>
-            <span class="envelope-pattern pattern-bottom"></span>
-            <span class="tap-hint">Tap to open</span>
-          </button>
-
-          <article class="invite-card" id="inviteCard">
-            <p class="card-blessing" data-config="blessing">|| Shree Ganeshaya Namah ||</p>
-            <div class="card-ganesha">🪷</div>
-            <p class="card-copy" data-config="inviteOpeningText">Together with our families, we request the honor of your presence as we celebrate our wedding ceremony and the beginning of our forever.</p>
-
-            <h3 class="couple-names">
-              <span data-config="brideName">Divya</span>
-              <span class="amp">and</span>
-              <span data-config="groomName">Nandan</span>
-            </h3>
-
-            <div class="wedding-date-block">
-              <div><span class="date-small">Thursday</span></div>
-              <div class="date-center">
-                <span data-config="weddingMonth">November</span>
-                <strong data-config="weddingDay">26</strong>
-                <span data-config="weddingYear">2026</span>
-              </div>
-              <div><span class="date-small" data-config="weddingTimeDisplay">11:55 AM to 1:25 PM</span></div>
-            </div>
-
-            <p class="card-venue">
-              <span data-config="venueName">Venue name to be added</span><br />
-              <span data-config="venueAddress">Dallas, Texas</span>
-            </p>
-
-            <a href="#events" class="btn btn-primary">View Wedding Events</a>
-          </article>
+          <a class="btn primary" href="#rsvp">RSVP</a>
+          <a class="btn secondary" href="#details">View Details</a>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section id="events" class="events-section">
-      <div class="section-shell reveal">
-        <div class="section-heading">
-          <p class="section-tag">Our Celebration</p>
-          <h2>Events & Timings</h2>
-          <p>Join us for two days of traditions, color, family, blessings, and celebration.</p>
+    <main>
+      <section class="section invite-section">
+        <div class="content-card">
+          <h2>Wedding Invitation</h2>
+          <p data-config="inviteOpeningText">
+            With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.
+          </p>
         </div>
-        <div class="event-grid" id="eventGrid"></div>
-      </div>
-    </section>
+      </section>
 
-    <section id="rsvp" class="rsvp-section">
-      <div class="section-shell rsvp-shell reveal">
-        <div class="section-heading">
-          <p class="section-tag">RSVP</p>
-          <h2>Your presence means so much to us</h2>
-          <p>Please let us know if you’ll be joining our celebration.</p>
-        </div>
+      <section id="details" class="section details-section">
+        <div class="content-card">
+          <h2>Celebration Details</h2>
+          <p data-config="detailsText">
+            We look forward to celebrating this beautiful occasion with our family and friends. Venue, accommodation, hotel, and travel details can be added here.
+          </p>
 
-        <div class="rsvp-grid">
-          <div class="rsvp-copy">
-            <div class="mini-panel">
-              <h3>Why RSVP?</h3>
-              <p>Sharing your response helps us plan the celebration with care for every guest.</p>
-            </div>
-            <div class="mini-panel">
-              <h3>Celebration Dates</h3>
-              <p><strong>25th November:</strong> Haldi & Mehendi from 3:00 PM</p>
-              <p><strong>26th November:</strong> Wedding Ceremony from 11:55 AM to 1:25 PM</p>
-            </div>
+          <div class="venue-block">
+            <h3 data-config="venueName">Soaring Heights Ranch</h3>
+            <p data-config="venueAddress">145 Arrow Country Road, McKinney, Texas</p>
+            <a class="btn secondary" id="mapLink" href="#" target="_blank" rel="noopener">Open Map</a>
           </div>
+        </div>
+      </section>
 
-          <form id="rsvpForm" class="rsvp-form">
-            <div class="form-row">
-              <label for="guestName">Full Name</label>
-              <input id="guestName" name="guestName" type="text" placeholder="Your name" required />
-            </div>
+      <section class="section events-section">
+        <div class="content-card">
+          <h2>Events</h2>
+          <div id="eventsList" class="events-list">
+            <!-- Events are loaded from wedding-config.js by app.js -->
+          </div>
+        </div>
+      </section>
 
-            <div class="form-row">
-              <label for="guestContact">Email / Phone</label>
-              <input id="guestContact" name="guestContact" type="text" placeholder="Email or phone number" required />
-            </div>
+      <section class="section countdown-section">
+        <div class="content-card">
+          <h2>Countdown</h2>
+          <div id="countdown" class="countdown">
+            <div><strong id="days">0</strong><span>Days</span></div>
+            <div><strong id="hours">0</strong><span>Hours</span></div>
+            <div><strong id="minutes">0</strong><span>Minutes</span></div>
+            <div><strong id="seconds">0</strong><span>Seconds</span></div>
+          </div>
+        </div>
+      </section>
 
-            <div class="form-row two-col">
-              <div>
-                <label for="attendance">Will you attend?</label>
-                <select id="attendance" name="attendance" required>
-                  <option value="">Select one</option>
-                  <option value="Yes, I will attend">Yes, I will attend</option>
-                  <option value="Sorry, I cannot attend">Sorry, I cannot attend</option>
-                </select>
-              </div>
-              <div>
-                <label for="guestCount">Number of Guests</label>
-                <input id="guestCount" name="guestCount" type="number" min="1" max="10" value="1" required />
-              </div>
-            </div>
+      <section id="rsvp" class="section rsvp-section">
+        <div class="content-card">
+          <h2>RSVP</h2>
+          <p class="rsvp-note">
+            Please RSVP by <span data-config="RSVP_DEADLINE_DISPLAY">30th July 2026</span>.
+          </p>
 
-            <fieldset class="check-group">
-              <legend>Events Attending</legend>
-              <label><input type="checkbox" name="events" value="Haldi & Mehendi" /> Haldi & Mehendi</label>
-              <label><input type="checkbox" name="events" value="Wedding Ceremony" /> Wedding Ceremony</label>
-            </fieldset>
+          <form id="rsvpForm" class="rsvp-form" method="POST">
+            <label>
+              Full Name
+              <input type="text" name="name" required placeholder="Your full name" />
+            </label>
 
-            <div class="form-row">
-              <label for="message">Message / Dietary Notes</label>
-              <textarea id="message" name="message" rows="4" placeholder="Optional message"></textarea>
-            </div>
+            <label>
+              Email
+              <input type="email" name="email" required placeholder="your@email.com" />
+            </label>
 
-            <button type="submit" class="btn btn-primary wide-btn">Submit RSVP</button>
-            <p class="form-status" id="formStatus" role="status"></p>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" placeholder="Phone number" />
+            </label>
+
+            <label>
+              Will you attend?
+              <select name="attendance" required>
+                <option value="">Select one</option>
+                <option value="Yes, I will attend">Yes, I will attend</option>
+                <option value="No, I cannot attend">No, I cannot attend</option>
+              </select>
+            </label>
+
+            <label>
+              Number of Guests
+              <input type="number" name="guests" min="1" max="10" value="1" required />
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Any message, dietary note, or detail"></textarea>
+            </label>
+
+            <input type="hidden" name="wedding" value="Divya and Nandan Wedding" />
+            <input type="hidden" name="_subject" value="New RSVP for Divya and Nandan Wedding" />
+
+            <button class="btn primary" type="submit">Submit RSVP</button>
+            <p id="rsvpStatus" class="rsvp-status" aria-live="polite"></p>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="details" class="details-section">
-      <div class="section-shell reveal">
-        <div class="section-heading">
-          <p class="section-tag">Additional Details</p>
-          <h2 data-config="weddingCity">Dallas, Texas</h2>
-          <p data-config="detailsText">We look forward to celebrating this beautiful occasion with our family and friends. Venue, accommodation, hotel, and travel details can be added here.</p>
-        </div>
+    <footer class="footer">
+      <p>Divya & Nandan</p>
+      <p>26th November 2026 · McKinney, Texas</p>
+    </footer>
+  </div>
 
-        <div class="details-actions">
-          <a id="calendarLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Add Wedding to Calendar</a>
-          <a id="mapLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Open Venue Map</a>
-        </div>
+  <audio id="weddingMusic" src="wedding-music.mp3" preload="none"></audio>
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">♪</button>
 
-        <div class="accordion-wrap">
-          <details><summary>Dress Code</summary><p>Festive Indian / traditional attire. You can edit this text in <code>index.html</code>.</p></details>
-          <details><summary>Travel & Stay</summary><p>Add hotel blocks, airport details, parking, or travel notes here.</p></details>
-          <details><summary>What to Bring</summary><p>Bring your blessings, smiles, and energy for the celebration.</p></details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Made with love for <span data-config="brideName">Divya</span> & <span data-config="groomName">Nandan</span></p>
-  </footer>
-
-  <script src="wedding-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
