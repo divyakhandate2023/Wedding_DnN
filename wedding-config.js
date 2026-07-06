@@ -6,12 +6,13 @@ window.WEDDING_CONFIG = {
   groomName: "Nandan",
 
   heroDateLine:
-    "We request the pleasure of your company on 26th November 2026 to celebrate their wedding ",
+    "We request the pleasure of your company on 26th November 2026 to celebrate their wedding.",
 
   weddingDateDisplay: "26th November",
   weddingMonth: "November",
   weddingDay: "26",
   weddingYear: "2026",
+  weddingDayName: "Thursday",
   weddingTimeDisplay: "11:55 AM to 1:25 PM",
 
   weddingCity: "McKinney, Texas",
@@ -22,15 +23,17 @@ window.WEDDING_CONFIG = {
     "With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.",
 
   detailsText:
-   
-  "We look forward to celebrating this beautiful occasion with our family and friends. Please find the venue, dress code, and suggested hotel details below.",
+    "We look forward to celebrating this beautiful occasion with our family and friends. Please find the venue, dress code, and suggested hotel details below.",
+
+  weddingDressCode: "Festive Indian / traditional wedding attire.",
+  haldiDressCode: "Yellow, beige, or light green festive Indian attire.",
 
   googleMapsLink:
     "https://maps.google.com/?q=Soaring%20Heights%20Ranch%20145%20Arrow%20Country%20Road%20McKinney%20Texas",
+
   RSVP_ENDPOINT: "https://formspree.io/f/xnjkwwyz",
   RSVP_DEADLINE: "2026-07-30T23:59:59-05:00",
   RSVP_DEADLINE_DISPLAY: "30th July 2026",
-  RSVP_EMAIL: "divyakhandate@example.com,kamat1688@gmail.com",
 
   weddingCalendarStart: "20261126T115500",
   weddingCalendarEnd: "20261126T132500",

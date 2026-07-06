@@ -7,6 +7,7 @@
   function setTextFromConfig() {
     $$("[data-config]").forEach((el) => {
       const key = el.getAttribute("data-config");
+
       if (Object.prototype.hasOwnProperty.call(config, key)) {
         el.textContent = config[key];
       }
@@ -52,11 +53,13 @@
 
   function setupLinks() {
     const mapLink = $("#mapLink");
-    if (mapLink) {
+
+    if (mapLink && config.googleMapsLink) {
       mapLink.href = config.googleMapsLink;
     }
 
     const calendarLink = $("#calendarLink");
+
     if (calendarLink) {
       const title = encodeURIComponent("Divya and Nandan Wedding");
       const details = encodeURIComponent(
@@ -66,6 +69,7 @@
           config.venueAddress
       );
       const location = encodeURIComponent(config.venueName + ", " + config.venueAddress);
+
       calendarLink.href =
         `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}` +
         `&dates=${config.weddingCalendarStart}/${config.weddingCalendarEnd}` +
@@ -84,7 +88,9 @@
     });
 
     navMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => navMenu.classList.remove("open"));
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+      });
     });
   }
 
@@ -158,9 +164,14 @@
     copyBtn.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(window.location.href.split("?")[0]);
-        if (copyStatus) copyStatus.textContent = "Invite link copied.";
+
+        if (copyStatus) {
+          copyStatus.textContent = "Invite link copied.";
+        }
       } catch (error) {
-        if (copyStatus) copyStatus.textContent = "Copy failed. Please copy the browser link.";
+        if (copyStatus) {
+          copyStatus.textContent = "Copy failed. Please copy the browser link.";
+        }
       }
     });
   }
@@ -171,34 +182,40 @@
 
     if (!form) return;
 
-    if (config.RSVP_ENDPOINT) {
-      form.action = config.RSVP_ENDPOINT;
+    const configuredEndpoint = config.RSVP_ENDPOINT || form.getAttribute("action");
+
+    if (configuredEndpoint) {
+      form.action = configuredEndpoint;
     }
 
     const deadline = config.RSVP_DEADLINE ? new Date(config.RSVP_DEADLINE) : null;
+
     if (deadline && Date.now() > deadline.getTime()) {
       form.querySelectorAll("input, select, textarea, button").forEach((el) => {
         el.disabled = true;
       });
+
       if (status) {
         status.textContent = "RSVP deadline has passed.";
       }
+
       return;
     }
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-    const endpoint = config.RSVP_ENDPOINT || form.action;
+      const endpoint = config.RSVP_ENDPOINT || form.getAttribute("action");
 
-if (!endpoint) {
-  if (status) {
-    status.textContent = "RSVP endpoint is missing.";
-  }
-  return;
-}
+      if (!endpoint) {
+        if (status) {
+          status.textContent = "RSVP endpoint is missing.";
+        }
+        return;
+      }
 
       const submitButton = form.querySelector('button[type="submit"]');
+
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = "Submitting...";
@@ -239,6 +256,63 @@ if (!endpoint) {
     });
   }
 
+  function setupLandingInvite() {
+    const landingCard = $("#landingEnvelopeCard");
+    const landingInvite = $("#landingInvite");
+
+    if (!landingCard || !landingInvite) return;
+
+    const openLandingInvite = () => {
+      landingCard.classList.add("opening");
+
+      setTimeout(() => {
+        document.body.classList.remove("invite-closed");
+
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }, 300);
+
+        landingInvite.remove();
+      }, 1200);
+    };
+
+    landingCard.addEventListener("click", openLandingInvite);
+
+    landingCard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLandingInvite();
+      }
+    });
+  }
+
+  function setupOldEnvelopeCardFallback() {
+    const openInviteCard = $("#openInviteCard");
+
+    if (!openInviteCard) return;
+
+    openInviteCard.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    openInviteCard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    });
+  }
+
   function escapeHtml(value) {
     return String(value ?? "")
       .replaceAll("&", "&amp;")
@@ -258,63 +332,7 @@ if (!endpoint) {
     setupCountdown();
     setupCopyInviteLink();
     setupRSVP();
+    setupLandingInvite();
+    setupOldEnvelopeCardFallback();
   });
 })();
-document.addEventListener("DOMContentLoaded", () => {
-  const openInviteCard = document.getElementById("openInviteCard");
-
-  openInviteCard?.addEventListener("click", () => {
-    const actualInvitationCard = document.getElementById("actualInvitationCard");
-
-    actualInvitationCard?.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  });
-
-  openInviteCard?.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-
-      const actualInvitationCard = document.getElementById("actualInvitationCard");
-
-      actualInvitationCard?.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const landingCard = document.getElementById("landingEnvelopeCard");
-  const landingInvite = document.getElementById("landingInvite");
-  const actualInvitationCard = document.getElementById("actualInvitationCard");
-
-  const openLandingInvite = () => {
-    if (!landingCard || !landingInvite) return;
-
-    landingCard.classList.add("opening");
-
-    setTimeout(() => {
-      document.body.classList.remove("invite-closed");
-
-      setTimeout(() => {
-        actualInvitationCard?.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }, 300);
-
-      landingInvite.remove();
-    }, 1200);
-  };
-
-  landingCard.addEventListener("click", openLandingInvite);
-
-  landingCard.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openLandingInvite();
-    }
-  });
-});
