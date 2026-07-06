@@ -285,3 +285,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const landingCard = document.getElementById("landingEnvelopeCard");
+  const landingInvite = document.getElementById("landingInvite");
+  const actualInvitationCard = document.getElementById("actualInvitationCard");
+
+  const openLandingInvite = () => {
+    if (!landingCard || !landingInvite) return;
+
+    landingCard.classList.add("opening");
+
+    setTimeout(() => {
+      document.body.classList.remove("invite-closed");
+
+      setTimeout(() => {
+        actualInvitationCard?.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 300);
+
+      landingInvite.remove();
+    }, 1200);
+  };
+
+  landingCard.addEventListener("click", openLandingInvite);
+
+  landingCard.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openLandingInvite();
+    }
+  });
+});
