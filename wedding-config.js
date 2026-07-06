@@ -6,7 +6,7 @@ window.WEDDING_CONFIG = {
   groomName: "Nandan",
 
   heroDateLine:
-    "We request the pleasure of your company on 26th November 2026 to celebrate the wedding of our beloved daughter and son",
+    "We request the pleasure of your company on 26th November 2026 to celebrate their wedding ",
 
   weddingDateDisplay: "26th November",
   weddingMonth: "November",
