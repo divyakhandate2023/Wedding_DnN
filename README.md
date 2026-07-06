@@ -1,43 +1,42 @@
-# Divya & Nandan Burgundy Gold Wedding Invitation Website
+# Divya & Nandan Wedding Website
 
-A complete static wedding invitation website using a luxury burgundy, champagne gold, and ivory theme.
+This folder contains the complete static wedding invitation website.
 
 ## Files
-- index.html
-- styles.css
-- app.js
-- wedding-config.js
-- README.md
 
-## Features
-- Burgundy and champagne gold invite theme
-- Hindu wedding blessing and Om
-- Click-to-open envelope invitation
-- Wedding countdown timer
-- Falling gold petals
-- Events section
-- RSVP form
-- Copy invite link button
-- Add to Google Calendar button
-- Venue map button
-- Music button support
-- Mobile responsive layout
+- `index.html`
+- `styles.css`
+- `app.js`
+- `wedding-config.js`
+- `README.md`
 
-## Music
-The website has a music button. To enable it, add an MP3 file in the same folder and name it exactly:
+## Current details included
 
-wedding-music.mp3
+- Bride: Divya
+- Groom: Nandan
+- Families: Khandate and Kamat Families
+- Venue: Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas
+- Haldi & Mehendi: 25th November 2026, starting from 3:00 PM
+- Wedding: 26th November 2026, 11:55 AM to 1:25 PM
+- Haldi/Mehendi outfit colors: yellow, beige, or light green
+- Wedding outfit: festive Indian / traditional attire
+- Suggested hotels:
+  - Hilton Garden Inn Frisco
+  - Sheraton Stonebriar Hotel
+  - Hotel Indigo Frisco by IHG
+- RSVP Formspree endpoint: https://formspree.io/f/xnjkwwyz
+- RSVP deadline: 30th July 2026
 
-## Edit details
-Open wedding-config.js and update venue, RSVP email, Formspree endpoint, and event details.
+## How to upload to GitHub
 
-## Run locally
-python -m http.server 8000
+Copy all files in this folder into your GitHub repo folder, then run:
 
-Then open:
-http://localhost:8000
-
-## Push to GitHub
+```powershell
 git add .
-git commit -m "Update wedding website to burgundy gold theme"
-git push
+git commit -m "Add final wedding website"
+git push origin main
+```
+
+Then enable GitHub Pages:
+
+Settings → Pages → Deploy from a branch → main → /root → Save.

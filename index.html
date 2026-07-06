@@ -3,154 +3,272 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Divya & Nandan Wedding Invitation</title>
-  <meta name="description" content="Wedding invitation for Divya and Nandan" />
+
+  <title>Divya & Nandan | Wedding Invitation</title>
+  <meta name="description" content="Wedding invitation for Divya and Nandan in McKinney, Texas." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="styles.css" />
   <script src="wedding-config.js"></script>
 </head>
 
 <body>
-  <div class="page-shell">
-    <header class="hero section">
-      <div class="hero-card">
-        <p class="blessing" data-config="blessing">|| Shree Ganeshaya Namah ||</p>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a href="#home" class="logo" data-config="initials">D & N</a>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation">
+      ☰
+    </button>
+
+    <nav class="nav" id="navMenu" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#invite">Invitation</a>
+      <a href="#events">Events</a>
+      <a href="#rsvp">RSVP</a>
+      <a href="#details">Details</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-frame reveal">
+        <div class="hero-blessing" data-config="blessing">|| Shree Ganeshaya Namah ||</div>
         <div class="om-symbol">ॐ</div>
 
-        <p class="hero-kicker">Khandate and Kamat Families</p>
+        <p class="family-line" data-config="familyLine">Khandate and Kamat Families</p>
 
-        <h1 class="couple-names">
+        <h1 class="couple-title">
           <span data-config="brideName">Divya</span>
-          <span class="name-and">and</span>
+          <span class="and-text">and</span>
           <span data-config="groomName">Nandan</span>
         </h1>
 
-        <p class="hero-date-line" data-config="heroDateLine">
-          We request the pleasure of your company on 26th November 2026 to celebrate the wedding of our beloved daughter and son
+        <p class="hero-invite-line" data-config="heroDateLine">
+          request the pleasure of your company on 26th November 2026 to celebrate Divya and Nandan's wedding.
         </p>
 
-        <div class="date-badge">
-          <span data-config="weddingMonth">November</span>
-          <strong data-config="weddingDay">26</strong>
-          <span data-config="weddingYear">2026</span>
+        <div class="date-panel">
+          <span data-config="weddingDayName">Thursday</span>
+          <strong data-config="weddingDateDisplay">26th November 2026</strong>
+          <span data-config="weddingTimeDisplay">11:55 AM to 1:25 PM</span>
         </div>
 
-        <p class="wedding-time" data-config="weddingTimeDisplay">11:55 AM to 1:25 PM</p>
-        <p class="wedding-city" data-config="weddingCity">McKinney, Texas</p>
+        <p class="venue-line">
+          <span data-config="venueName">Soaring Heights Ranch</span> ·
+          <span data-config="weddingCity">McKinney, Texas</span>
+        </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#rsvp">RSVP</a>
-          <a class="btn secondary" href="#details">View Details</a>
+          <a href="#rsvp" class="btn btn-primary">RSVP Now</a>
+          <a href="#events" class="btn btn-secondary">View Events</a>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="section invite-section">
-        <div class="content-card">
-          <h2>Wedding Invitation</h2>
-          <p data-config="inviteOpeningText">
-            With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.
-          </p>
-        </div>
-      </section>
+    <section id="invite" class="section invite-section">
+      <div class="section-shell reveal">
+        <p class="section-tag">Wedding Invitation</p>
+        <h2>A celebration of love, family, and blessings</h2>
+        <p class="lead" data-config="inviteOpeningText">
+          With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.
+        </p>
 
-      <section id="details" class="section details-section">
-        <div class="content-card">
-          <h2>Celebration Details</h2>
-          <p data-config="detailsText">
-            We look forward to celebrating this beautiful occasion with our family and friends. Venue, accommodation, hotel, and travel details can be added here.
-          </p>
+        <article class="invitation-card">
+          <div class="card-corner top-left"></div>
+          <div class="card-corner bottom-right"></div>
 
-          <div class="venue-block">
-            <h3 data-config="venueName">Soaring Heights Ranch</h3>
-            <p data-config="venueAddress">145 Arrow Country Road, McKinney, Texas</p>
-            <a class="btn secondary" id="mapLink" href="#" target="_blank" rel="noopener">Open Map</a>
-          </div>
-        </div>
-      </section>
+          <p class="card-blessing" data-config="blessing">|| Shree Ganeshaya Namah ||</p>
+          <div class="lotus-mark">🪷</div>
 
-      <section class="section events-section">
-        <div class="content-card">
-          <h2>Events</h2>
-          <div id="eventsList" class="events-list">
-            <!-- Events are loaded from wedding-config.js by app.js -->
-          </div>
-        </div>
-      </section>
-
-      <section class="section countdown-section">
-        <div class="content-card">
-          <h2>Countdown</h2>
-          <div id="countdown" class="countdown">
-            <div><strong id="days">0</strong><span>Days</span></div>
-            <div><strong id="hours">0</strong><span>Hours</span></div>
-            <div><strong id="minutes">0</strong><span>Minutes</span></div>
-            <div><strong id="seconds">0</strong><span>Seconds</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="rsvp" class="section rsvp-section">
-        <div class="content-card">
-          <h2>RSVP</h2>
-          <p class="rsvp-note">
-            Please RSVP by <span data-config="RSVP_DEADLINE_DISPLAY">30th July 2026</span>.
+          <p class="card-copy">
+            <span data-config="familyLine">Khandate and Kamat Families</span>
+            request the pleasure of your company to celebrate the wedding of
           </p>
 
-          <form id="rsvpForm" class="rsvp-form" method="POST">
-            <label>
-              Full Name
-              <input type="text" name="name" required placeholder="Your full name" />
-            </label>
+          <h3>
+            <span data-config="brideName">Divya</span>
+            <span>and</span>
+            <span data-config="groomName">Nandan</span>
+          </h3>
 
-            <label>
-              Email
-              <input type="email" name="email" required placeholder="your@email.com" />
-            </label>
+          <div class="wedding-date-block">
+            <div>
+              <span class="small">Day</span>
+              <strong data-config="weddingDayName">Thursday</strong>
+            </div>
+            <div>
+              <span class="small">Date</span>
+              <strong data-config="weddingDateDisplay">26th November 2026</strong>
+            </div>
+            <div>
+              <span class="small">Time</span>
+              <strong data-config="weddingTimeDisplay">11:55 AM to 1:25 PM</strong>
+            </div>
+          </div>
 
-            <label>
-              Phone Number
-              <input type="tel" name="phone" placeholder="Phone number" />
-            </label>
+          <p class="card-venue">
+            <strong data-config="venueName">Soaring Heights Ranch</strong><br />
+            <span data-config="venueAddress">145 Arrow Country Road, McKinney, Texas</span>
+          </p>
+        </article>
+      </div>
+    </section>
 
-            <label>
-              Will you attend?
-              <select name="attendance" required>
-                <option value="">Select one</option>
-                <option value="Yes, I will attend">Yes, I will attend</option>
-                <option value="No, I cannot attend">No, I cannot attend</option>
-              </select>
-            </label>
+    <section id="events" class="section events-section">
+      <div class="section-shell reveal">
+        <p class="section-tag">Events</p>
+        <h2>Wedding Celebrations</h2>
+        <p class="lead">Join us for traditions, color, blessings, and celebration.</p>
 
-            <label>
-              Number of Guests
-              <input type="number" name="guests" min="1" max="10" value="1" required />
-            </label>
+        <div class="event-grid" id="eventGrid"></div>
+      </div>
+    </section>
 
-            <label>
-              Message
-              <textarea name="message" rows="4" placeholder="Any message, dietary note, or detail"></textarea>
-            </label>
+    <section class="section countdown-section">
+      <div class="section-shell reveal">
+        <p class="section-tag">Countdown</p>
+        <h2>Counting down to the wedding</h2>
 
-            <input type="hidden" name="wedding" value="Divya and Nandan Wedding" />
-            <input type="hidden" name="_subject" value="New RSVP for Divya and Nandan Wedding" />
-
-            <button class="btn primary" type="submit">Submit RSVP</button>
-            <p id="rsvpStatus" class="rsvp-status" aria-live="polite"></p>
-          </form>
+        <div class="countdown" aria-label="Wedding countdown">
+          <div><strong id="days">00</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <p>Divya & Nandan</p>
-      <p>26th November 2026 · McKinney, Texas</p>
-    </footer>
-  </div>
+    <section id="rsvp" class="section rsvp-section">
+      <div class="section-shell rsvp-shell reveal">
+        <div class="rsvp-intro">
+          <p class="section-tag">RSVP</p>
+          <h2>Your presence means so much to us</h2>
+          <p>
+            Please submit your RSVP by
+            <strong data-config="RSVP_DEADLINE_DISPLAY">30th July 2026</strong>.
+          </p>
+          <p>
+            The form submits directly to the hosts through Formspree. Guests do not need to open their email app.
+          </p>
+        </div>
 
-  <audio id="weddingMusic" src="wedding-music.mp3" preload="none"></audio>
-  <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">♪</button>
+        <form
+          id="rsvpForm"
+          class="rsvp-form"
+          method="POST"
+          action="https://formspree.io/f/xnjkwwyz"
+        >
+          <input type="hidden" name="_subject" value="New RSVP for Divya and Nandan Wedding" />
+          <input type="hidden" name="wedding" value="Divya and Nandan Wedding" />
+          <input type="hidden" name="venue" value="Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas" />
+
+          <label>
+            Full Name
+            <input type="text" name="guest_name" required placeholder="Your full name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="guest_email" required placeholder="your@email.com" />
+          </label>
+
+          <label>
+            Phone Number
+            <input type="tel" name="guest_phone" required placeholder="Your phone number" />
+          </label>
+
+          <label>
+            Will you attend?
+            <select name="attendance" required>
+              <option value="">Select one</option>
+              <option value="Yes, I will attend">Yes, I will attend</option>
+              <option value="No, I cannot attend">No, I cannot attend</option>
+            </select>
+          </label>
+
+          <label>
+            Number of Guests Including You
+            <input type="number" name="guest_count" min="1" max="10" value="1" required />
+          </label>
+
+          <fieldset class="checkbox-group">
+            <legend>Events Attending</legend>
+            <label>
+              <input type="checkbox" name="events_attending" value="Haldi and Mehendi" />
+              Haldi & Mehendi
+            </label>
+            <label>
+              <input type="checkbox" name="events_attending" value="Wedding Ceremony" />
+              Wedding Ceremony
+            </label>
+          </fieldset>
+
+          <label>
+            Message / Dietary Notes
+            <textarea name="message" rows="4" placeholder="Share any dietary notes or a message for the couple"></textarea>
+          </label>
+
+          <button class="btn btn-primary wide-btn" type="submit">Submit RSVP</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="details" class="section details-section">
+      <div class="section-shell reveal">
+        <p class="section-tag">Details</p>
+        <h2 data-config="weddingCity">McKinney, Texas</h2>
+        <p class="lead" data-config="detailsText">
+          We look forward to celebrating this beautiful occasion with our family and friends. Your presence and blessings would make our celebration complete.
+        </p>
+
+        <div class="details-grid">
+          <article class="detail-card">
+            <h3>Venue</h3>
+            <p>
+              <strong data-config="venueName">Soaring Heights Ranch</strong><br />
+              <span data-config="venueAddress">145 Arrow Country Road, McKinney, Texas</span>
+            </p>
+            <a id="mapLink" class="text-link" href="#" target="_blank" rel="noopener">Open Google Maps</a>
+          </article>
+
+          <article class="detail-card">
+            <h3>Wedding Day Dress Code</h3>
+            <p data-config="weddingDressCode">Festive Indian / traditional attire.</p>
+          </article>
+
+          <article class="detail-card">
+            <h3>Haldi & Mehendi Outfit Colors</h3>
+            <p data-config="haldiDressCode">Yellow, beige, or light green.</p>
+          </article>
+        </div>
+
+        <div class="hotel-section">
+          <h3>Suggested Hotels</h3>
+          <div class="hotel-grid" id="hotelGrid"></div>
+        </div>
+
+        <div class="details-actions">
+          <a id="calendarLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Add Wedding to Calendar</a>
+          <button id="copyInviteLink" class="btn btn-secondary" type="button">Copy Invite Link</button>
+        </div>
+        <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span data-config="brideName">Divya</span> & <span data-config="groomName">Nandan</span></p>
+    <p><span data-config="weddingDateDisplay">26th November 2026</span> · <span data-config="weddingCity">McKinney, Texas</span></p>
+  </footer>
 
   <script src="app.js"></script>
 </body>
