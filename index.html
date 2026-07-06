@@ -220,18 +220,35 @@
           </label>
 
           <label>
-            Will you attend?
-            <select name="attendance" required>
-              <option value="">Select one</option>
-              <option value="Yes, I will attend">Yes, I will attend</option>
-              <option value="No, I cannot attend">No, I cannot attend</option>
-            </select>
-          </label>
+  Will you attend?
+  <select id="attendanceSelect" name="attendance" required>
+    <option value="">Select one</option>
+    <option value="Yes, I will attend">Yes, I will attend</option>
+    <option value="No, I cannot attend">No, I cannot attend</option>
+  </select>
+</label>
 
-          <label>
-            Number of Guests Including You
-            <input type="number" name="guest_count" min="1" max="10" value="1" required />
-          </label>
+<div id="guestOptions">
+  <label>
+    Adults Attending
+    <select id="adultCount" name="adult_count">
+      <option value="1">1 - Just me</option>
+      <option value="2">2 - Me + 1 guest</option>
+    </select>
+  </label>
+
+  <label>
+    Children Attending
+    <select id="childrenCount" name="children_count">
+      <option value="0">0 children</option>
+      <option value="1">1 child</option>
+      <option value="2">2 children</option>
+      <option value="3">3 children</option>
+    </select>
+  </label>
+</div>
+
+    
 
           <fieldset class="checkbox-group">
             <legend>Events Attending</legend>

@@ -321,6 +321,47 @@
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
   }
+  function setupGuestOptions() {
+  const attendanceSelect = document.getElementById("attendanceSelect");
+  const guestOptions = document.getElementById("guestOptions");
+  const adultCount = document.getElementById("adultCount");
+  const childrenCount = document.getElementById("childrenCount");
+
+  if (!attendanceSelect || !guestOptions) return;
+
+  const updateGuestOptions = () => {
+    const isAttending = attendanceSelect.value === "Yes, I will attend";
+
+    if (isAttending) {
+      guestOptions.style.display = "grid";
+
+      if (adultCount) {
+        adultCount.disabled = false;
+        adultCount.required = true;
+      }
+
+      if (childrenCount) {
+        childrenCount.disabled = false;
+      }
+    } else {
+      guestOptions.style.display = "none";
+
+      if (adultCount) {
+        adultCount.value = "1";
+        adultCount.disabled = true;
+        adultCount.required = false;
+      }
+
+      if (childrenCount) {
+        childrenCount.value = "0";
+        childrenCount.disabled = true;
+      }
+    }
+  };
+
+  attendanceSelect.addEventListener("change", updateGuestOptions);
+  updateGuestOptions();
+}
 
   document.addEventListener("DOMContentLoaded", () => {
     setTextFromConfig();
@@ -332,6 +373,7 @@
     setupCountdown();
     setupCopyInviteLink();
     setupRSVP();
+    setupGuestOptions();
     setupLandingInvite();
     setupOldEnvelopeCardFallback();
   });

@@ -1085,3 +1085,7 @@ body.invite-closed .site-footer {
     opacity: 0;
   }
 }
+#guestOptions {
+  display: grid;
+  gap: 18px;
+}
