@@ -189,12 +189,14 @@
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      if (!config.RSVP_ENDPOINT) {
-        if (status) {
-          status.textContent = "RSVP endpoint is missing.";
-        }
-        return;
-      }
+    const endpoint = config.RSVP_ENDPOINT || form.action;
+
+if (!endpoint) {
+  if (status) {
+    status.textContent = "RSVP endpoint is missing.";
+  }
+  return;
+}
 
       const submitButton = form.querySelector('button[type="submit"]');
       if (submitButton) {
@@ -207,7 +209,7 @@
       }
 
       try {
-        const response = await fetch(config.RSVP_ENDPOINT, {
+        const response = await fetch(endpoint, {
           method: "POST",
           body: new FormData(form),
           headers: {

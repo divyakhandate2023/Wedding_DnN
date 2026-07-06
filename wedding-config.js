@@ -27,8 +27,7 @@ window.WEDDING_CONFIG = {
 
   googleMapsLink:
     "https://maps.google.com/?q=Soaring%20Heights%20Ranch%20145%20Arrow%20Country%20Road%20McKinney%20Texas",
-
-  RSVP_ENDPOINT: "",
+  RSVP_ENDPOINT: "https://formspree.io/f/xnjkwwyz",
   RSVP_DEADLINE: "2026-07-30T23:59:59-05:00",
   RSVP_DEADLINE_DISPLAY: "30th July 2026",
   RSVP_EMAIL: "divyakhandate@example.com,kamat1688@gmail.com",
