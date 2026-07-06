@@ -22,7 +22,8 @@ window.WEDDING_CONFIG = {
     "With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.",
 
   detailsText:
-    "We look forward to celebrating this beautiful occasion with our family and friends. Venue, accommodation, hotel, and travel details can be added here.",
+   
+  "We look forward to celebrating this beautiful occasion with our family and friends. Please find the venue, dress code, and suggested hotel details below.",
 
   googleMapsLink:
     "https://maps.google.com/?q=Soaring%20Heights%20Ranch%20145%20Arrow%20Country%20Road%20McKinney%20Texas",
