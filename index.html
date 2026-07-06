@@ -19,7 +19,18 @@
 </head>
 
 <body>
-  <div class="page-bg" aria-hidden="true"></div>
+  <div class="global-falling-leaves" aria-hidden="true">
+  <span class="leaf leaf-1"></span>
+  <span class="leaf leaf-2"></span>
+  <span class="leaf leaf-3"></span>
+  <span class="leaf leaf-4"></span>
+  <span class="leaf leaf-5"></span>
+  <span class="leaf leaf-6"></span>
+  <span class="leaf leaf-7"></span>
+  <span class="leaf leaf-8"></span>
+  <span class="leaf leaf-9"></span>
+  <span class="leaf leaf-10"></span>
+</div></div>
 
   <header class="site-header">
     <a href="#home" class="logo" data-config="initials">D & N</a>
@@ -36,7 +47,7 @@
       <a href="#details">Details</a>
     </nav>
   </header>
-
+  
   <main>
   <section id="home" class="hero">
     <div class="hero-frame reveal">
@@ -87,8 +98,14 @@
         <p class="lead" data-config="inviteOpeningText">
           With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.
         </p>
+       <div class="envelope-card" id="openInviteCard" role="button" tabindex="0">
+  <div class="envelope-inner">
+    <div class="envelope-seal">D &amp; N</div>
+    <div class="tap-open">Tap to open</div>
+  </div>
+</div>
 
-        <article class="invitation-card">
+        <article class="invitation-card" id="actualInvitationCard">
           <div class="card-corner top-left"></div>
           <div class="card-corner bottom-right"></div>
 

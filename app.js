@@ -258,3 +258,28 @@
     setupRSVP();
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const openInviteCard = document.getElementById("openInviteCard");
+
+  openInviteCard?.addEventListener("click", () => {
+    const actualInvitationCard = document.getElementById("actualInvitationCard");
+
+    actualInvitationCard?.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  });
+
+  openInviteCard?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+
+      const actualInvitationCard = document.getElementById("actualInvitationCard");
+
+      actualInvitationCard?.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+  });
+});
