@@ -25,8 +25,8 @@ window.WEDDING_CONFIG = {
   detailsText:
     "We look forward to celebrating this beautiful occasion with our family and friends. Please find the venue, dress code, and suggested hotel details below.",
 
-  weddingDressCode: "Festive Indian / traditional wedding attire.",
-  haldiDressCode: "Yellow, beige, or light green festive Indian attire.",
+  brideParents: "D/o Mrs. Komala and Khandate Sathaynarayana",
+  groomParents: "S/o Mrs. Vrinda Kamat and Hemant Kamat",
 
   googleMapsLink:
     "https://maps.google.com/?q=Soaring%20Heights%20Ranch%20145%20Arrow%20Country%20Road%20McKinney%20Texas",
@@ -42,13 +42,21 @@ window.WEDDING_CONFIG = {
   events: [
     {
       label: "Pre-Wedding Celebration",
-      title: "Haldi & Mehendi",
+      title: "Haldi",
       date: "25th November",
-      time: "Starting from 3:00 PM",
+      time: "11:00 AM to 12:00 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
-      attire: "Yellow, beige, or light green festive Indian attire.",
       description:
-        "A joyful afternoon of haldi, mehendi, music, laughter, color, and blessings as we begin our wedding celebrations."
+        "A joyful morning of haldi, music, laughter, color, and blessings as we begin our wedding celebrations. Lunch to follow at 12:30 PM."
+    },
+    {
+      label: "Pre-Wedding Celebration",
+      title: "Mehendi",
+      date: "25th November",
+      time: "After 3:00 PM",
+      location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
+      description:
+        "An afternoon of mehendi, music, laughter, and celebration. Snacks and Beverages will be served."
     },
     {
       label: "Wedding Ceremony",
@@ -56,9 +64,8 @@ window.WEDDING_CONFIG = {
       date: "26th November",
       time: "11:55 AM to 1:25 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
-      attire: "Festive Indian / traditional wedding attire.",
       description:
-        "With love, joy, and blessings, we invite you to witness our Hindu wedding ceremony and celebrate the beginning of our married life."
+        "With love, joy, and blessings, we invite you to bless our Hindu wedding ceremony and celebrate the beginning of our married life."
     }
   ]
 };

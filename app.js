@@ -28,7 +28,6 @@
             <p><strong>Time:</strong> ${escapeHtml(event.time)}</p>
             <p><strong>Location:</strong> ${escapeHtml(event.location)}</p>
             <p>${escapeHtml(event.description)}</p>
-            <div class="attire"><strong>Dress Code:</strong> ${escapeHtml(event.attire)}</div>
           </article>
         `
       )
