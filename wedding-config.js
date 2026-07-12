@@ -1,14 +1,14 @@
 window.WEDDING_CONFIG = {
-  blessing: "|| Shree Ganeshaya Namah ||",
   initials: "D & N",
 
   brideName: "Divya",
   groomName: "Nandan",
 
   heroDateLine:
-    "We request the pleasure of your company on 26th November 2026 to celebrate their wedding.",
+    "Your presence and blessings will make this occasion truly special and memorable.",
 
   weddingDateDisplay: "26th November",
+  weddingDateNumeric: "26 • 11 • 2026",
   weddingMonth: "November",
   weddingDay: "26",
   weddingYear: "2026",
@@ -18,12 +18,6 @@ window.WEDDING_CONFIG = {
   weddingCity: "McKinney, Texas",
   venueName: "Soaring Heights Ranch",
   venueAddress: "145 Arrow Country Road, McKinney, Texas",
-
-  inviteOpeningText:
-    "With love, joy, and gratitude, we invite you to be part of our wedding ceremony as we begin this beautiful new chapter together.",
-
-  detailsText:
-    "We look forward to celebrating this beautiful occasion with our family and friends. Please find the venue, dress code, and suggested hotel details below.",
 
   brideParents: "D/o Mrs. Komala and Khandate Sathaynarayana",
   groomParents: "S/o Mrs. Vrinda Kamat and Hemant Kamat",
@@ -47,7 +41,8 @@ window.WEDDING_CONFIG = {
       time: "11:00 AM to 12:00 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
       description:
-        "A joyful morning of haldi, music, laughter, color, and blessings as we begin our wedding celebrations. Lunch to follow at 12:30 PM."
+        "A joyful morning of haldi, music, laughter, color, and blessings as we begin our wedding celebrations.",
+      note: "Lunch will be served at 12:30 PM"
     },
     {
       label: "Pre-Wedding Celebration",
@@ -56,7 +51,8 @@ window.WEDDING_CONFIG = {
       time: "After 3:00 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
       description:
-        "An afternoon of mehendi, music, laughter, and celebration. Snacks and Beverages will be served."
+        "An afternoon of mehendi, music, laughter, and celebration.",
+      note: "Snacks and beverages will be served"
     },
     {
       label: "Wedding Ceremony",

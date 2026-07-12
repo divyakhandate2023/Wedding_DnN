@@ -14,39 +14,33 @@
     });
   }
 
+  const EVENT_ICONS = {
+    Haldi: "assets/images/haldi.png",
+    Mehendi: "assets/images/mehendi.png",
+    Wedding: "assets/images/wedding-mandap.png"
+  };
+
   function renderEvents() {
     const eventGrid = $("#eventGrid");
     if (!eventGrid || !Array.isArray(config.events)) return;
 
     eventGrid.innerHTML = config.events
-      .map(
-        (event) => `
+      .map((event) => {
+        const icon = EVENT_ICONS[event.title];
+        return `
           <article class="event-card">
             <span class="label">${escapeHtml(event.label)}</span>
+            ${icon ? `<div class="event-image-wrapper"><img class="event-image" src="${icon}" alt="${escapeHtml(event.title)} illustration" /></div>` : ""}
             <h3>${escapeHtml(event.title)}</h3>
+            <img class="lotus-divider title-divider" src="assets/images/lotus-divider.png" alt="" />
             <p><strong>Date:</strong> ${escapeHtml(event.date)}</p>
             <p><strong>Time:</strong> ${escapeHtml(event.time)}</p>
             <p><strong>Location:</strong> ${escapeHtml(event.location)}</p>
-            <p>${escapeHtml(event.description)}</p>
+            <p class="event-description">${escapeHtml(event.description)}</p>
+            ${event.note ? `<p class="event-note">&#127808; ${escapeHtml(event.note)}</p>` : ""}
           </article>
-        `
-      )
-      .join("");
-  }
-
-  function renderHotels() {
-    const hotelGrid = $("#hotelGrid");
-    if (!hotelGrid || !Array.isArray(config.hotels)) return;
-
-    hotelGrid.innerHTML = config.hotels
-      .map(
-        (hotel) => `
-          <article class="hotel-card">
-            <h4>${escapeHtml(hotel.name)}</h4>
-            <p>${escapeHtml(hotel.note)}</p>
-          </article>
-        `
-      )
+        `;
+      })
       .join("");
   }
 
@@ -55,6 +49,13 @@
 
     if (mapLink && config.googleMapsLink) {
       mapLink.href = config.googleMapsLink;
+    }
+
+    const directionsLink = $("#directionsLink");
+
+    if (directionsLink && config.venueName) {
+      const destination = encodeURIComponent(config.venueName + ", " + config.venueAddress);
+      directionsLink.href = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
     }
 
     const calendarLink = $("#calendarLink");
@@ -365,7 +366,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     setTextFromConfig();
     renderEvents();
-    renderHotels();
     setupLinks();
     setupMenu();
     setupRevealAnimation();

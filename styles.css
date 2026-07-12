@@ -3,14 +3,15 @@
 }
 
 :root {
-  --burgundy-deep: #3b0710;
-  --burgundy: #5b0f1b;
-  --burgundy-soft: #7b1d2d;
-  --wine: #2b050b;
-  --gold: #d8b66b;
-  --gold-soft: #f1d99b;
-  --ivory: #fff9ef;
-  --cream: #f9ead2;
+  /* Luxury burgundy + gold palette, darkest to lightest per role */
+  --wine: #360813; /* Dark Maroon */
+  --burgundy-deep: #4a0e1e; /* Deep Wine */
+  --burgundy: #5a1024; /* Primary Burgundy */
+  --burgundy-soft: #68162c; /* Rich Burgundy */
+  --gold: #d4af37; /* Antique Gold */
+  --gold-soft: #e7c66d; /* Soft Gold */
+  --ivory: #fff8ef; /* Ivory Text */
+  --cream: #f5e6c8; /* Champagne */
   --mauve: #c98b8e;
   --text: #2e1715;
   --muted: #70494a;
@@ -27,7 +28,7 @@ body {
   color: var(--text);
   font-family: "Montserrat", Arial, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(216, 182, 107, 0.28), transparent 35%),
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.28), transparent 35%),
     radial-gradient(circle at bottom right, rgba(201, 139, 142, 0.22), transparent 28%),
     linear-gradient(135deg, #fff7ea 0%, #f5dcc6 42%, #fffaf1 100%);
   overflow-x: hidden;
@@ -39,8 +40,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(91, 15, 27, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(91, 15, 27, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(90, 16, 36, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 16, 36, 0.035) 1px, transparent 1px);
   background-size: 46px 46px;
   z-index: -2;
 }
@@ -50,7 +51,7 @@ body::before {
   inset: 0;
   z-index: -3;
   background:
-    radial-gradient(circle at 50% 8%, rgba(91, 15, 27, 0.16), transparent 34%),
+    radial-gradient(circle at 50% 8%, rgba(90, 16, 36, 0.16), transparent 34%),
     linear-gradient(135deg, #fff9ef, #f7deca);
 }
 
@@ -67,9 +68,9 @@ a {
   justify-content: space-between;
   padding: 18px clamp(18px, 5vw, 72px);
   color: var(--ivory);
-  background: rgba(59, 7, 16, 0.88);
+  background: rgba(74, 14, 30, 0.88);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(216, 182, 107, 0.4);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 .logo {
@@ -102,7 +103,7 @@ a {
 .menu-btn {
   display: none;
   background: transparent;
-  border: 1px solid rgba(216, 182, 107, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.55);
   color: var(--gold-soft);
   border-radius: 999px;
   padding: 8px 12px;
@@ -117,8 +118,8 @@ a {
   padding: 92px 18px 72px;
   overflow: hidden;
   background:
-    linear-gradient(rgba(43, 5, 11, 0.72), rgba(43, 5, 11, 0.72)),
-    radial-gradient(circle at 50% 20%, #7b1d2d 0%, #3b0710 60%, #210308 100%);
+    linear-gradient(rgba(54, 8, 19, 0.72), rgba(54, 8, 19, 0.72)),
+    radial-gradient(circle at 50% 20%, var(--burgundy-soft) 0%, var(--burgundy-deep) 60%, var(--wine) 100%);
 }
 
 .hero::before,
@@ -127,7 +128,7 @@ a {
   position: absolute;
   width: 460px;
   height: 460px;
-  border: 1px solid rgba(216, 182, 107, 0.24);
+  border: 1px solid rgba(212, 175, 55, 0.24);
   border-radius: 50%;
 }
 
@@ -149,9 +150,9 @@ a {
   padding: clamp(34px, 7vw, 74px);
   color: var(--ivory);
   background:
-    linear-gradient(135deg, rgba(255, 249, 239, 0.12), rgba(216, 182, 107, 0.05)),
-    rgba(43, 5, 11, 0.58);
-  border: 1px solid rgba(216, 182, 107, 0.56);
+    linear-gradient(135deg, rgba(255, 249, 239, 0.12), rgba(212, 175, 55, 0.05)),
+    rgba(54, 8, 19, 0.58);
+  border: 1px solid rgba(212, 175, 55, 0.56);
   border-radius: 34px;
   box-shadow: var(--shadow);
 }
@@ -160,27 +161,14 @@ a {
   content: "";
   position: absolute;
   inset: 16px;
-  border: 1px solid rgba(216, 182, 107, 0.36);
+  border: 1px solid rgba(212, 175, 55, 0.36);
   border-radius: 26px;
   pointer-events: none;
 }
 
-.hero-blessing,
-.card-blessing {
-  color: var(--gold-soft);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.83rem;
-  margin: 0 0 10px;
-}
-
-.om-symbol {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--gold);
-  font-size: clamp(2.8rem, 9vw, 5.4rem);
-  line-height: 1;
-  margin-bottom: 12px;
-  text-shadow: 0 0 35px rgba(216, 182, 107, 0.38);
+.hero-content {
+  position: relative;
+  z-index: 3;
 }
 
 .family-line {
@@ -193,10 +181,10 @@ a {
 
 .couple-title {
   margin: 0;
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(4.6rem, 14vw, 9.5rem);
+  font-family: "Alex Brush", cursive;
+  font-size: clamp(4.2rem, 12.5vw, 8.6rem);
   font-weight: 400;
-  line-height: 0.9;
+  line-height: 1.2;
   color: var(--ivory);
 }
 
@@ -213,53 +201,171 @@ a {
 .parent-line {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(0.68rem, 1.3vw, 0.9rem);
+  font-size: clamp(0.85rem, 1.7vw, 1.05rem);
   line-height: 1.4;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.03em;
   color: #f8dfaa;
-  margin: 6px 0 10px;
+  margin: clamp(6px, 1.2vw, 14px) 0 clamp(20px, 3vw, 32px);
 }
 
-.invitation-card .parent-line {
-  color: var(--burgundy-soft);
+
+.invite-card {
+  position: relative;
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: clamp(34px, 6vw, 60px) clamp(24px, 5vw, 50px);
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--ivory) 0%, var(--cream) 100%);
+  border: 2px solid var(--gold);
+  outline: 1px solid rgba(212, 175, 55, 0.32);
+  outline-offset: -12px;
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
 }
 
-.hero-invite-line {
-  max-width: 700px;
-  margin: 26px auto 24px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.2rem, 3vw, 1.75rem);
-  line-height: 1.45;
-  color: #fff5dc;
+.corner-decoration {
+  position: absolute;
+  z-index: 1;
+  width: clamp(120px, 20vw, 220px);
+  pointer-events: none;
+  user-select: none;
 }
 
-.date-panel {
-  width: min(520px, 100%);
-  margin: 0 auto 26px;
-  padding: 18px;
-  display: grid;
-  gap: 8px;
-  border-top: 1px solid rgba(216, 182, 107, 0.5);
-  border-bottom: 1px solid rgba(216, 182, 107, 0.5);
-  color: #fff3ce;
+.corner-top-left {
+  top: -6px;
+  left: -6px;
+}
+
+.corner-top-right {
+  top: -6px;
+  right: -6px;
+}
+
+.corner-bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.corner-bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+
+.bells-decoration {
+  position: absolute;
+  z-index: 2;
+  top: clamp(50px, 9vw, 90px);
+  right: clamp(10px, 3vw, 30px);
+  width: clamp(70px, 12vw, 110px);
+  pointer-events: none;
+}
+
+.invitation-content {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 560px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.invite-monogram {
+  display: block;
+  width: 90px;
+  height: auto;
+  margin: 0 auto 12px;
+}
+
+.invite-blessing {
+  margin: 0 0 8px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.82rem;
+  color: var(--gold);
 }
 
-.date-panel strong {
+.invite-ganesha {
+  display: block;
+  width: 42px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.lotus-divider {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 0 auto 24px;
+}
+
+.lotus-divider.name-divider {
+  width: 190px;
+  margin: 10px auto;
+}
+
+.lotus-divider.bottom-divider {
+  width: 130px;
+  margin: 0 auto 24px;
+}
+
+.invite-tagline {
+  margin: 0 0 6px;
+}
+
+.invite-tagline p {
+  margin: 4px 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.invite-tagline-script {
+  margin-top: 6px !important;
+  font-family: "Alex Brush", cursive;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  text-transform: none !important;
+}
+
+.mandap-scene {
+  display: block;
+  width: min(460px, 100%);
+  height: auto;
+  margin: 20px auto 24px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.invite-couple-caps {
+  margin: 0 0 20px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.45rem, 4vw, 2.3rem);
-  color: var(--ivory);
-  letter-spacing: 0.04em;
-  text-transform: none;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--burgundy);
 }
 
-.venue-line {
-  color: #f8dfaa;
-  margin: 0 0 26px;
+.invite-ampersand-inline {
+  display: inline-block;
+  margin: 0 12px;
+  font-family: "Alex Brush", cursive;
+  font-size: 1.3em;
+  text-transform: none;
+  color: var(--gold);
+}
+
+.invite-date-numeric {
+  margin: 0 0 22px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--burgundy);
 }
 
 .hero-actions,
@@ -294,21 +400,22 @@ a {
 .btn-primary {
   color: #35100e;
   background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-  box-shadow: 0 16px 34px rgba(216, 182, 107, 0.32);
+  box-shadow: 0 16px 34px rgba(212, 175, 55, 0.32);
 }
 
 .btn-secondary {
   color: var(--ivory);
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(216, 182, 107, 0.52);
+  border: 1px solid rgba(212, 175, 55, 0.52);
 }
 .ivory-section .btn-secondary,
 .details-section .btn-secondary,
-.details-actions .btn-secondary {
-  color: #5b0f1b;
-  background: #fff9ef;
-  border: 2px solid #5b0f1b;
-  box-shadow: 0 10px 26px rgba(91, 15, 27, 0.18);
+.details-actions .btn-secondary,
+.program-section .btn-secondary {
+  color: var(--burgundy);
+  background: var(--ivory);
+  border: 2px solid var(--burgundy);
+  box-shadow: 0 10px 26px rgba(90, 16, 36, 0.18);
 }
 .section {
   padding: clamp(64px, 9vw, 110px) 18px;
@@ -317,6 +424,12 @@ a {
 .section-shell {
   width: min(1120px, 100%);
   margin: 0 auto;
+}
+
+.details-section .section-shell,
+.countdown-section .section-shell {
+  position: relative;
+  overflow: hidden;
 }
 
 .section-tag {
@@ -346,110 +459,13 @@ h2 {
   line-height: 1.6;
 }
 
-.invite-section,
+.program-section,
 .events-section,
 .details-section {
   text-align: center;
 }
 
-.invitation-card {
-  position: relative;
-  width: min(760px, 100%);
-  margin: 32px auto 0;
-  padding: clamp(34px, 7vw, 64px);
-  background:
-    linear-gradient(135deg, rgba(255, 249, 239, 0.96), rgba(246, 225, 198, 0.96));
-  border: 1px solid rgba(91, 15, 27, 0.16);
-  border-radius: 30px;
-  box-shadow: var(--card-shadow);
-  overflow: hidden;
-}
-
-.invitation-card::before {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border: 1px solid rgba(216, 182, 107, 0.55);
-  border-radius: 22px;
-  pointer-events: none;
-}
-
-.card-corner {
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  border: 2px solid rgba(216, 182, 107, 0.38);
-  border-radius: 50%;
-}
-
-.card-corner.top-left {
-  top: -78px;
-  left: -70px;
-}
-
-.card-corner.bottom-right {
-  bottom: -78px;
-  right: -70px;
-}
-
-.lotus-mark {
-  font-size: 2rem;
-  margin: 4px 0 18px;
-}
-
-.card-copy {
-  max-width: 560px;
-  margin: 0 auto 28px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.35rem;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-.invitation-card h3 {
-  margin: 0;
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-size: clamp(3.6rem, 11vw, 6.8rem);
-  line-height: 0.95;
-  color: var(--burgundy);
-}
-
-.wedding-date-block {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin: 34px auto;
-}
-
-.wedding-date-block div {
-  padding: 18px 10px;
-  border-top: 1px solid rgba(91, 15, 27, 0.18);
-  border-bottom: 1px solid rgba(91, 15, 27, 0.18);
-}
-
-.wedding-date-block .small {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--burgundy-soft);
-  margin-bottom: 8px;
-}
-
-.wedding-date-block strong {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
-}
-
-.card-venue {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--muted);
-}
-
 .event-grid,
-.details-grid,
 .hotel-grid {
   display: grid;
   gap: 22px;
@@ -460,10 +476,9 @@ h2 {
 }
 
 .event-card,
-.detail-card,
 .hotel-card {
   background: rgba(255, 249, 239, 0.88);
-  border: 1px solid rgba(91, 15, 27, 0.14);
+  border: 1px solid rgba(90, 16, 36, 0.14);
   border-radius: 24px;
   padding: 28px;
   box-shadow: var(--card-shadow);
@@ -476,38 +491,68 @@ h2 {
   padding: 7px 12px;
   border-radius: 999px;
   color: var(--burgundy);
-  background: rgba(216, 182, 107, 0.24);
+  background: rgba(212, 175, 55, 0.24);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
+.event-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 14px;
+}
+
+.event-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .event-card h3,
-.detail-card h3,
-.hotel-section h3,
 .hotel-card h4 {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   font-family: "Cormorant Garamond", serif;
   color: var(--burgundy);
   font-size: 1.8rem;
   line-height: 1.1;
+  text-align: center;
+}
+
+.lotus-divider.title-divider {
+  width: 90px;
+  margin: 0 auto 16px;
 }
 
 .event-card p,
-.detail-card p,
 .hotel-card p {
   color: var(--muted);
   line-height: 1.7;
 }
 
-.attire {
-  margin-top: 18px;
-  padding: 14px 16px;
-  background: rgba(216, 182, 107, 0.18);
-  border-left: 4px solid var(--gold);
-  border-radius: 14px;
+.event-description {
+  font-style: italic;
+}
+
+.event-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 999px;
   color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .countdown-section {
@@ -516,9 +561,38 @@ h2 {
   text-align: center;
 }
 
+.countdown-content {
+  position: relative;
+  z-index: 3;
+}
+
 .countdown-section h2,
 .countdown-section .section-tag {
   color: var(--gold-soft);
+}
+
+.flourished {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.flourished::before,
+.flourished::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.countdown-subtitle {
+  max-width: 480px;
+  margin: 18px auto 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ivory);
 }
 
 .countdown {
@@ -529,11 +603,17 @@ h2 {
   gap: 14px;
 }
 
-.countdown div {
+.countdown-item {
   padding: 24px 12px;
   background: rgba(255, 249, 239, 0.09);
-  border: 1px solid rgba(216, 182, 107, 0.38);
+  border: 1px solid rgba(212, 175, 55, 0.38);
   border-radius: 20px;
+}
+
+.countdown-icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
 }
 
 .countdown strong {
@@ -544,7 +624,7 @@ h2 {
   line-height: 1;
 }
 
-.countdown span {
+.countdown-label {
   display: block;
   margin-top: 8px;
   text-transform: uppercase;
@@ -552,10 +632,37 @@ h2 {
   font-size: 0.72rem;
 }
 
+.countdown-monogram {
+  margin: 30px 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-soft);
+}
+
 .rsvp-section {
+  position: relative;
   background:
-    radial-gradient(circle at top left, rgba(216, 182, 107, 0.24), transparent 34%),
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.24), transparent 34%),
     linear-gradient(135deg, #fff7eb, #f4d8c4);
+}
+
+.floral-vine {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  width: 90px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (min-width: 1300px) {
+  .floral-vine {
+    display: block;
+  }
 }
 
 .rsvp-shell {
@@ -566,11 +673,23 @@ h2 {
 }
 
 .rsvp-intro {
+  position: relative;
+  overflow: hidden;
   background: var(--burgundy);
   color: var(--ivory);
   border-radius: 28px;
   padding: clamp(28px, 5vw, 44px);
   box-shadow: var(--shadow);
+}
+
+.rsvp-intro-content {
+  position: relative;
+  z-index: 3;
+}
+
+.rsvp-divider {
+  width: 110px;
+  margin: 10px auto 18px;
 }
 
 .rsvp-intro h2,
@@ -587,13 +706,12 @@ h2 {
   gap: 18px;
   padding: clamp(26px, 5vw, 40px);
   background: rgba(255, 249, 239, 0.96);
-  border: 1px solid rgba(91, 15, 27, 0.14);
+  border: 1px solid rgba(90, 16, 36, 0.14);
   border-radius: 28px;
   box-shadow: var(--card-shadow);
 }
 
-.rsvp-form label,
-.checkbox-group legend {
+.rsvp-form label {
   display: grid;
   gap: 8px;
   color: var(--burgundy);
@@ -606,7 +724,7 @@ h2 {
 .rsvp-form select,
 .rsvp-form textarea {
   width: 100%;
-  border: 1px solid rgba(91, 15, 27, 0.2);
+  border: 1px solid rgba(90, 16, 36, 0.2);
   border-radius: 14px;
   padding: 13px 14px;
   background: #fffdf7;
@@ -614,19 +732,58 @@ h2 {
   font: inherit;
 }
 
+.input-icon-wrap {
+  position: relative;
+  display: block;
+}
+
+.input-icon-wrap .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.input-icon-wrap input,
+.input-icon-wrap select {
+  padding-left: 40px;
+}
+
 .rsvp-form input:focus,
 .rsvp-form select:focus,
 .rsvp-form textarea:focus {
-  outline: 2px solid rgba(216, 182, 107, 0.6);
+  outline: 2px solid rgba(212, 175, 55, 0.6);
   border-color: var(--gold);
 }
 
 .checkbox-group {
-  border: 1px solid rgba(91, 15, 27, 0.14);
+  border: 1px solid rgba(90, 16, 36, 0.14);
   border-radius: 18px;
   padding: 18px;
   display: grid;
   gap: 12px;
+}
+
+.checkbox-group legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  color: var(--burgundy);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.legend-divider {
+  flex: 1;
+  width: auto;
+  height: 16px;
+  object-fit: contain;
+  margin: 0;
 }
 
 .checkbox-group label {
@@ -639,7 +796,9 @@ h2 {
 }
 
 .checkbox-group input {
-  width: auto;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--burgundy);
 }
 
 .wide-btn {
@@ -655,27 +814,66 @@ h2 {
   text-align: center;
 }
 
-.details-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 34px 0;
+.details-content {
+  position: relative;
+  z-index: 3;
 }
 
-.text-link {
-  color: var(--burgundy);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid var(--gold);
-}
-
-.hotel-section {
-  margin-top: 30px;
-  text-align: left;
-}
-
-.hotel-section > h3 {
+.venue-card {
+  position: relative;
+  width: min(680px, 100%);
+  margin: 32px auto;
+  padding: clamp(24px, 5vw, 40px);
+  background: rgba(255, 249, 239, 0.7);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
   text-align: center;
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 22px;
+}
+
+.venue-label {
+  margin: 0 0 4px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.venue-card h3 {
+  margin: 0 0 4px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--burgundy);
+}
+
+.venue-city {
+  margin: 0 0 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.venue-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 20px;
+  border-radius: 12px;
+}
+
+.venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.hotels-heading {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 22px;
 }
 
 .hotel-grid {
@@ -686,12 +884,39 @@ h2 {
   text-align: center;
 }
 
+.hotel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 12px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.hotel-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.hotel-link {
+  color: var(--burgundy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+
 .site-footer {
   padding: 34px 18px;
   color: var(--ivory);
   background: var(--wine);
   text-align: center;
-  border-top: 1px solid rgba(216, 182, 107, 0.4);
+  border-top: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 .site-footer p {
@@ -728,9 +953,9 @@ h2 {
     align-items: stretch;
     gap: 0;
     padding: 12px;
-    border: 1px solid rgba(216, 182, 107, 0.45);
+    border: 1px solid rgba(212, 175, 55, 0.45);
     border-radius: 18px;
-    background: rgba(59, 7, 16, 0.98);
+    background: rgba(74, 14, 30, 0.98);
   }
 
   .nav.open {
@@ -750,10 +975,8 @@ h2 {
     border-radius: 24px;
   }
 
-  .wedding-date-block,
   .event-grid,
   .rsvp-shell,
-  .details-grid,
   .hotel-grid {
     grid-template-columns: 1fr;
   }
@@ -763,7 +986,19 @@ h2 {
   }
 
   .couple-title {
-    font-size: clamp(4rem, 19vw, 6.5rem);
+    font-size: clamp(3.4rem, 17vw, 5.6rem);
+  }
+
+  .corner-decoration {
+    width: clamp(90px, 30vw, 150px);
+    opacity: 0.85;
+  }
+
+  .bells-decoration {
+    top: 60px;
+    right: 6px;
+    width: clamp(52px, 16vw, 76px);
+    opacity: 0.85;
   }
 }
 
@@ -784,7 +1019,7 @@ h2 {
     gap: 10px;
   }
 
-  .countdown div {
+  .countdown-item {
     padding: 18px 8px;
   }
 }
@@ -814,13 +1049,9 @@ main,
 
 /* keep text/cards above leaves */
 .hero-frame,
-.formal-card,
 .invite-card,
-.content-card,
-.rsvp-card,
-.details-card,
+.venue-card,
 .event-card,
-.detail-card,
 .hotel-card {
   position: relative;
   z-index: 5;
@@ -831,7 +1062,7 @@ main,
   top: -80px;
   width: 22px;
   height: 36px;
-  background: linear-gradient(180deg, #f3e3b7 0%, #d8b66b 100%);
+  background: linear-gradient(180deg, #f3e3b7 0%, #d4af37 100%);
   border-radius: 80% 0 80% 0;
   opacity: 0.9;
   filter: drop-shadow(0 4px 10px rgba(91, 13, 26, 0.18));
@@ -911,64 +1142,6 @@ main,
     opacity: 0;
   }
 }
-.envelope-card {
-  width: min(560px, 92%);
-  margin: 36px auto 46px;
-  padding: 22px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #5b0615 0%, #7a071d 50%, #46030f 100%);
-  box-shadow: 0 26px 70px rgba(57, 7, 15, 0.28);
-}
-
-.envelope-inner {
-  position: relative;
-  min-height: 320px;
-  border: 1px solid rgba(216, 182, 107, 0.45);
-  border-radius: 18px;
-  overflow: hidden;
-  background:
-    linear-gradient(35deg, transparent 48%, rgba(255, 236, 190, 0.13) 49%, rgba(255, 236, 190, 0.13) 51%, transparent 52%),
-    linear-gradient(145deg, transparent 48%, rgba(255, 236, 190, 0.13) 49%, rgba(255, 236, 190, 0.13) 51%, transparent 52%),
-    linear-gradient(135deg, #7a0b1f 0%, #630717 40%, #4a0311 100%);
-}
-
-.envelope-seal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 106px;
-  height: 106px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #f3dca2, #d8b66b);
-  border: 4px solid rgba(255, 240, 210, 0.58);
-  color: #5b0d1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.9rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.tap-open {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #f1d180;
-  font-family: "Great Vibes", cursive;
-  font-size: 2rem;
-}
-.envelope-card {
-  cursor: pointer;
-}
-
-.envelope-card:hover {
-  transform: translateY(-4px);
-  transition: transform 0.25s ease;
-}
 body.invite-closed {
   overflow: hidden;
 }
@@ -985,29 +1158,34 @@ body.invite-closed .site-footer {
   place-items: center;
   padding: 32px 18px;
   background:
-    radial-gradient(circle at top left, rgba(216, 182, 107, 0.22), transparent 32%),
-    linear-gradient(135deg, #fff9ef, #f4dcc8);
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.22), transparent 32%),
+    linear-gradient(135deg, var(--ivory), var(--cream));
 }
 
 .landing-envelope-card {
   width: min(600px, 92%);
   padding: 22px;
   border-radius: 28px;
-  background: linear-gradient(135deg, #5b0615 0%, #7a071d 50%, #46030f 100%);
+  background: linear-gradient(135deg, var(--burgundy-soft) 0%, var(--burgundy) 50%, var(--burgundy-deep) 100%);
   box-shadow: 0 28px 80px rgba(57, 7, 15, 0.32);
   cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.landing-envelope-card:hover {
+  transform: translateY(-4px);
 }
 
 .landing-envelope-inner {
   position: relative;
   min-height: 350px;
-  border: 1px solid rgba(216, 182, 107, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.45);
   border-radius: 20px;
   overflow: hidden;
   background:
     linear-gradient(35deg, transparent 48%, rgba(255, 236, 190, 0.13) 49%, rgba(255, 236, 190, 0.13) 51%, transparent 52%),
     linear-gradient(145deg, transparent 48%, rgba(255, 236, 190, 0.13) 49%, rgba(255, 236, 190, 0.13) 51%, transparent 52%),
-    linear-gradient(135deg, #7a0b1f 0%, #630717 40%, #4a0311 100%);
+    linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-deep) 40%, var(--wine) 100%);
 }
 
 .landing-envelope-seal {
@@ -1018,9 +1196,9 @@ body.invite-closed .site-footer {
   height: 112px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #f3dca2, #d8b66b);
+  background: radial-gradient(circle at 30% 30%, var(--gold-soft), var(--gold));
   border: 4px solid rgba(255, 240, 210, 0.58);
-  color: #5b0d1a;
+  color: var(--burgundy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1036,7 +1214,7 @@ body.invite-closed .site-footer {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: #f1d180;
+  color: var(--gold-soft);
   font-family: "Great Vibes", cursive;
   font-size: 2.1rem;
   z-index: 4;
@@ -1048,7 +1226,7 @@ body.invite-closed .site-footer {
   left: 50%;
   width: 20px;
   height: 34px;
-  background: linear-gradient(180deg, #f3e3b7 0%, #d8b66b 100%);
+  background: linear-gradient(180deg, #f3e3b7 0%, #d4af37 100%);
   border-radius: 80% 0 80% 0;
   opacity: 0;
   z-index: 5;
