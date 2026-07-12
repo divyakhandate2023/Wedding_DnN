@@ -61,7 +61,7 @@ window.WEDDING_CONFIG = {
       time: "11:55 AM to 1:25 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
       description:
-        "With love, joy, and blessings, we invite you to bless our Hindu wedding ceremony and celebrate the beginning of our married life."
+        "With love, joy, and blessings, we invite you to bless our wedding ceremony and celebrate the beginning of our married life."
     }
   ]
 };
