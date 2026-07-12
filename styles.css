@@ -229,6 +229,8 @@ a {
   position: absolute;
   z-index: 1;
   width: clamp(120px, 20vw, 220px);
+  height: clamp(120px, 20vw, 220px);
+  object-fit: contain;
   pointer-events: none;
   user-select: none;
 }
@@ -991,6 +993,7 @@ h2 {
 
   .corner-decoration {
     width: clamp(90px, 30vw, 150px);
+    height: clamp(90px, 30vw, 150px);
     opacity: 0.85;
   }
 
