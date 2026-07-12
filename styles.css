@@ -213,12 +213,13 @@ a {
 .parent-line {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.68rem, 1.3vw, 0.9rem);
+  line-height: 1.4;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: #f8dfaa;
-  margin: 4px 0 0;
+  margin: 6px 0 10px;
 }
 
 .invitation-card .parent-line {
