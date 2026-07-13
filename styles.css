@@ -475,6 +475,7 @@ h2 {
 
 .event-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
 }
 
 .event-card,
@@ -487,14 +488,18 @@ h2 {
   text-align: left;
 }
 
+.event-card {
+  padding: 20px 22px;
+}
+
 .event-card .label {
   display: inline-flex;
-  margin-bottom: 14px;
-  padding: 7px 12px;
+  margin-bottom: 10px;
+  padding: 6px 12px;
   border-radius: 999px;
   color: var(--burgundy);
   background: rgba(212, 175, 55, 0.24);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -504,9 +509,9 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 14px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 8px;
 }
 
 .event-image {
@@ -526,9 +531,19 @@ h2 {
   text-align: center;
 }
 
+.event-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
 .lotus-divider.title-divider {
   width: 90px;
   margin: 0 auto 16px;
+}
+
+.event-card .title-divider {
+  width: 64px;
+  margin: 0 auto 8px;
 }
 
 .event-card p,
@@ -537,8 +552,10 @@ h2 {
   line-height: 1.7;
 }
 
-.event-description {
-  font-style: italic;
+.event-card p {
+  margin: 3px 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 .event-note {
@@ -555,6 +572,35 @@ h2 {
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: center;
+}
+
+.event-card .event-note {
+  margin: 8px 0 0;
+  padding: 7px 12px;
+  font-size: 0.78rem;
+}
+
+.event-shared-meta {
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  text-align: center;
+}
+
+.event-card .event-shared-meta {
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+}
+
+.event-subevents {
+  display: grid;
+  gap: 14px;
+}
+
+.event-subevent-divider {
+  display: block;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.35);
 }
 
 .countdown-section {

@@ -19,7 +19,7 @@ window.WEDDING_CONFIG = {
   venueName: "Soaring Heights Ranch",
   venueAddress: "145 Arrow Country Road, McKinney, Texas",
 
-  brideParents: "D/o Mrs. Komala and Sathyanaryana Khandate",
+  brideParents: "D/o Mrs. Komala and Sathyanarayana Khandate",
   groomParents: "S/o Mrs. Vrinda Kamat and Hemant Kamat",
 
   googleMapsLink:
@@ -40,8 +40,6 @@ window.WEDDING_CONFIG = {
       date: "25th November",
       time: "11:00 AM to 12:00 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
-      description:
-        "A joyful morning of haldi, music, laughter, color, and blessings as we begin our wedding celebrations.",
       note: "Lunch will be served at 12:30 PM"
     },
     {
@@ -50,8 +48,6 @@ window.WEDDING_CONFIG = {
       date: "25th November",
       time: "After 3:00 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
-      description:
-        "An afternoon of mehendi, music, laughter, and celebration.",
       note: "Snacks and beverages will be served"
     },
     {
@@ -60,8 +56,7 @@ window.WEDDING_CONFIG = {
       date: "26th November",
       time: "11:55 AM to 1:25 PM",
       location: "Soaring Heights Ranch, 145 Arrow Country Road, McKinney, Texas",
-      description:
-        "With love, joy, and blessings, we invite you to bless our wedding ceremony and celebrate the beginning of our married life."
+      note: "Lunch will be served after 1:30 PM"
     }
   ]
 };

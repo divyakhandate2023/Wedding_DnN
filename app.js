@@ -20,24 +20,64 @@
     Wedding: "assets/images/wedding-mandap.png"
   };
 
+  function renderEventBody(event, { showDate = true, showLocation = true } = {}) {
+    const icon = EVENT_ICONS[event.title];
+    return `
+      ${icon ? `<div class="event-image-wrapper"><img class="event-image" src="${icon}" alt="${escapeHtml(event.title)} illustration" /></div>` : ""}
+      <h3>${escapeHtml(event.title)}</h3>
+      <img class="lotus-divider title-divider" src="assets/images/lotus-divider.png" alt="" />
+      ${showDate ? `<p><strong>Date:</strong> ${escapeHtml(event.date)}</p>` : ""}
+      <p><strong>Time:</strong> ${escapeHtml(event.time)}</p>
+      ${showLocation ? `<p><strong>Location:</strong> ${escapeHtml(event.location)}</p>` : ""}
+      ${event.note ? `<p class="event-note">&#127808; ${escapeHtml(event.note)}</p>` : ""}
+    `;
+  }
+
   function renderEvents() {
     const eventGrid = $("#eventGrid");
     if (!eventGrid || !Array.isArray(config.events)) return;
 
-    eventGrid.innerHTML = config.events
-      .map((event) => {
-        const icon = EVENT_ICONS[event.title];
+    const groups = [];
+    config.events.forEach((event) => {
+      const last = groups[groups.length - 1];
+      if (last && last.label === event.label) {
+        last.items.push(event);
+      } else {
+        groups.push({ label: event.label, items: [event] });
+      }
+    });
+
+    eventGrid.innerHTML = groups
+      .map((group) => {
+        if (group.items.length === 1) {
+          return `
+            <article class="event-card">
+              <span class="label">${escapeHtml(group.label)}</span>
+              ${renderEventBody(group.items[0])}
+            </article>
+          `;
+        }
+
+        const first = group.items[0];
+        const subevents = group.items
+          .map(
+            (event, index) => `
+              ${index > 0 ? '<span class="event-subevent-divider"></span>' : ""}
+              <div class="event-subevent">
+                ${renderEventBody(event, { showDate: false, showLocation: false })}
+              </div>
+            `
+          )
+          .join("");
+
         return `
-          <article class="event-card">
-            <span class="label">${escapeHtml(event.label)}</span>
-            ${icon ? `<div class="event-image-wrapper"><img class="event-image" src="${icon}" alt="${escapeHtml(event.title)} illustration" /></div>` : ""}
-            <h3>${escapeHtml(event.title)}</h3>
-            <img class="lotus-divider title-divider" src="assets/images/lotus-divider.png" alt="" />
-            <p><strong>Date:</strong> ${escapeHtml(event.date)}</p>
-            <p><strong>Time:</strong> ${escapeHtml(event.time)}</p>
-            <p><strong>Location:</strong> ${escapeHtml(event.location)}</p>
-            <p class="event-description">${escapeHtml(event.description)}</p>
-            ${event.note ? `<p class="event-note">&#127808; ${escapeHtml(event.note)}</p>` : ""}
+          <article class="event-card event-card--grouped">
+            <span class="label">${escapeHtml(group.label)}</span>
+            <p class="event-shared-meta">
+              <strong>Date:</strong> ${escapeHtml(first.date)}<br />
+              <strong>Location:</strong> ${escapeHtml(first.location)}
+            </p>
+            <div class="event-subevents">${subevents}</div>
           </article>
         `;
       })
