@@ -691,10 +691,9 @@ h2 {
 
 .rsvp-divider {
   width: 110px;
-  margin: 10px auto 18px;
+  margin: 10px 0 18px;
 }
 
-.rsvp-intro h2,
 .rsvp-intro .section-tag {
   color: var(--gold-soft);
 }
