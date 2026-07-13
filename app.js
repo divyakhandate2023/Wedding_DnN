@@ -159,13 +159,9 @@
 
   function setupCountdown() {
     const target = config.countdownTarget ? new Date(config.countdownTarget).getTime() : NaN;
-
     const daysEl = $("#days");
-    const hoursEl = $("#hours");
-    const minutesEl = $("#minutes");
-    const secondsEl = $("#seconds");
 
-    if (!target || Number.isNaN(target) || !daysEl || !hoursEl || !minutesEl || !secondsEl) {
+    if (!target || Number.isNaN(target) || !daysEl) {
       return;
     }
 
@@ -174,25 +170,15 @@
 
       if (distance <= 0) {
         daysEl.textContent = "00";
-        hoursEl.textContent = "00";
-        minutesEl.textContent = "00";
-        secondsEl.textContent = "00";
         return;
       }
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
       daysEl.textContent = String(days).padStart(2, "0");
-      hoursEl.textContent = String(hours).padStart(2, "0");
-      minutesEl.textContent = String(minutes).padStart(2, "0");
-      secondsEl.textContent = String(seconds).padStart(2, "0");
     };
 
     update();
-    setInterval(update, 1000);
+    setInterval(update, 60000);
   }
 
   function setupCopyInviteLink() {
