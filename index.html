@@ -59,8 +59,8 @@
       <a href="#home">Home</a>
       <!-- <a href="#program">Celebration</a> -->
       <a href="#events">Events</a>
-      <a href="#rsvp">RSVP</a>
       <a href="#details">Details</a>
+      <a href="#rsvp">RSVP</a>
     </nav>
   </header>
 
@@ -193,6 +193,80 @@
       </div>
     </section>
 
+    <section id="details" class="section details-section">
+      <div class="section-shell reveal">
+        <img class="corner-decoration corner-top-left" src="assets/images/floral-top-left.png" alt="" />
+        <img class="corner-decoration corner-top-right" src="assets/images/floral-top-right.png" alt="" />
+        <img class="corner-decoration corner-bottom-left" src="assets/images/floral-bottom-left.png" alt="" />
+        <img class="corner-decoration corner-bottom-right" src="assets/images/floral-bottom-right.png" alt="" />
+        <img class="bells-decoration" src="assets/images/bells.png" alt="" />
+
+        <div class="details-content">
+          <p class="section-tag">Details</p>
+          <h2>Wedding Details</h2>
+          <img class="lotus-divider" src="assets/images/lotus-divider.png" alt="" />
+
+          <article class="venue-card">
+            <p class="venue-label">&#128205; Venue</p>
+            <h3 data-config="venueName">Soaring Heights Ranch</h3>
+            <p class="venue-city" data-config="weddingCity">McKinney, Texas</p>
+
+            <img class="venue-illustration" src="assets/images/venue-illustration.png" alt="Soaring Heights Ranch illustration" />
+
+            <div class="venue-actions">
+              <a id="mapLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">&#128205; Open Google Maps</a>
+              <a id="directionsLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">&#10148; Get Directions</a>
+            </div>
+          </article>
+
+          <img class="lotus-divider" src="assets/images/lotus-divider.png" alt="" />
+
+          <h3 class="hotels-heading">Suggested Hotels</h3>
+
+          <div class="hotel-grid">
+            <article class="hotel-card">
+              <span class="hotel-icon">&#128715;</span>
+              <h4>Hilton Garden Inn Frisco</h4>
+              <p>7550 Gaylord Parkway, Frisco, TX 75034</p>
+              <div class="hotel-links">
+                <a class="hotel-link" href="https://www.hilton.com/en/hotels/dfwfrgi-hilton-garden-inn-frisco/" target="_blank" rel="noopener">&#128197; Book Hotel</a>
+                <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=Hilton%20Garden%20Inn%20Frisco%207550%20Gaylord%20Parkway%20Frisco%20TX%2075034" target="_blank" rel="noopener">&#128205; Open Map</a>
+              </div>
+            </article>
+
+            <article class="hotel-card">
+              <span class="hotel-icon">&#128715;</span>
+              <h4>Sheraton Stonebriar Hotel</h4>
+              <p>5444 State Highway 121, Frisco, TX 75034</p>
+              <div class="hotel-links">
+                <a class="hotel-link" href="https://www.marriott.com/en-us/hotels/dalsa-sheraton-stonebriar-hotel/overview/" target="_blank" rel="noopener">&#128197; Book Hotel</a>
+                <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=Sheraton%20Stonebriar%20Hotel%205444%20State%20Highway%20121%20Frisco%20TX%2075034" target="_blank" rel="noopener">&#128205; Open Map</a>
+              </div>
+            </article>
+
+            <article class="hotel-card">
+              <span class="hotel-icon">&#128715;</span>
+              <h4>Hotel Indigo Frisco by IHG</h4>
+              <p>2985 Avenue of the Stars, Frisco, TX 75034</p>
+              <div class="hotel-links">
+                <a class="hotel-link" href="https://www.ihg.com/hotelindigo/hotels/us/en/frisco/dfwfr/hoteldetail" target="_blank" rel="noopener">&#128197; Book Hotel</a>
+                <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Indigo%20Frisco%202985%20Avenue%20of%20the%20Stars%20Frisco%20TX%2075034" target="_blank" rel="noopener">&#128205; Open Map</a>
+              </div>
+            </article>
+          </div>
+
+          <img class="lotus-divider" src="assets/images/lotus-divider.png" alt="" />
+
+          <div class="details-actions">
+            <a id="calendarLink" class="btn btn-primary" href="#" target="_blank" rel="noopener">&#128197; Add Wedding to Calendar</a>
+            <button id="copyInviteLink" class="btn btn-secondary" type="button">&#128279; Copy Invite Link</button>
+          </div>
+
+          <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
     <section id="rsvp" class="section rsvp-section">
       <div class="section-shell rsvp-shell reveal">
         <div class="rsvp-intro">
@@ -279,7 +353,7 @@
   </label>
 </div>
 
-    
+
 
           <fieldset class="checkbox-group">
             <legend>
@@ -306,80 +380,6 @@
           <button class="btn btn-primary wide-btn" type="submit">&#127808; Submit RSVP &#127808;</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
-      </div>
-    </section>
-
-    <section id="details" class="section details-section">
-      <div class="section-shell reveal">
-        <img class="corner-decoration corner-top-left" src="assets/images/floral-top-left.png" alt="" />
-        <img class="corner-decoration corner-top-right" src="assets/images/floral-top-right.png" alt="" />
-        <img class="corner-decoration corner-bottom-left" src="assets/images/floral-bottom-left.png" alt="" />
-        <img class="corner-decoration corner-bottom-right" src="assets/images/floral-bottom-right.png" alt="" />
-        <img class="bells-decoration" src="assets/images/bells.png" alt="" />
-
-        <div class="details-content">
-          <p class="section-tag">Details</p>
-          <h2>Wedding Details</h2>
-          <img class="lotus-divider" src="assets/images/lotus-divider.png" alt="" />
-
-          <article class="venue-card">
-            <p class="venue-label">&#128205; Venue</p>
-            <h3 data-config="venueName">Soaring Heights Ranch</h3>
-            <p class="venue-city" data-config="weddingCity">McKinney, Texas</p>
-
-            <img class="venue-illustration" src="assets/images/venue-illustration.png" alt="Soaring Heights Ranch illustration" />
-
-            <div class="venue-actions">
-              <a id="mapLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">&#128205; Open Google Maps</a>
-              <a id="directionsLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">&#10148; Get Directions</a>
-            </div>
-          </article>
-
-          <img class="lotus-divider" src="assets/images/lotus-divider.png" alt="" />
-
-          <h3 class="hotels-heading">Suggested Hotels</h3>
-
-          <div class="hotel-grid">
-            <article class="hotel-card">
-              <span class="hotel-icon">&#128715;</span>
-              <h4>Hilton Garden Inn Frisco</h4>
-              <p>7550 Gaylord Parkway, Frisco, TX 75034</p>
-              <div class="hotel-links">
-                <a class="hotel-link" href="https://www.hilton.com/en/hotels/dfwfrgi-hilton-garden-inn-frisco/" target="_blank" rel="noopener">&#128197; Book Hotel</a>
-                <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=Hilton%20Garden%20Inn%20Frisco%207550%20Gaylord%20Parkway%20Frisco%20TX%2075034" target="_blank" rel="noopener">&#128205; Open Map</a>
-              </div>
-            </article>
-
-            <article class="hotel-card">
-              <span class="hotel-icon">&#128715;</span>
-              <h4>Sheraton Stonebriar Hotel</h4>
-              <p>5444 State Highway 121, Frisco, TX 75034</p>
-              <div class="hotel-links">
-                <a class="hotel-link" href="https://www.marriott.com/en-us/hotels/dalsa-sheraton-stonebriar-hotel/overview/" target="_blank" rel="noopener">&#128197; Book Hotel</a>
-                <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=Sheraton%20Stonebriar%20Hotel%205444%20State%20Highway%20121%20Frisco%20TX%2075034" target="_blank" rel="noopener">&#128205; Open Map</a>
-              </div>
-            </article>
-
-            <article class="hotel-card">
-              <span class="hotel-icon">&#128715;</span>
-              <h4>Hotel Indigo Frisco by IHG</h4>
-              <p>2985 Avenue of the Stars, Frisco, TX 75034</p>
-              <div class="hotel-links">
-                <a class="hotel-link" href="https://www.ihg.com/hotelindigo/hotels/us/en/frisco/dfwfr/hoteldetail" target="_blank" rel="noopener">&#128197; Book Hotel</a>
-                <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Indigo%20Frisco%202985%20Avenue%20of%20the%20Stars%20Frisco%20TX%2075034" target="_blank" rel="noopener">&#128205; Open Map</a>
-              </div>
-            </article>
-          </div>
-
-          <img class="lotus-divider" src="assets/images/lotus-divider.png" alt="" />
-
-          <div class="details-actions">
-            <a id="calendarLink" class="btn btn-primary" href="#" target="_blank" rel="noopener">&#128197; Add Wedding to Calendar</a>
-            <button id="copyInviteLink" class="btn btn-secondary" type="button">&#128279; Copy Invite Link</button>
-          </div>
-
-          <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
-        </div>
       </div>
     </section>
   </main>
