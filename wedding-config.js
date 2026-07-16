@@ -19,8 +19,8 @@ window.WEDDING_CONFIG = {
   venueName: "Soaring Heights Ranch",
   venueAddress: "145 Arrow Country Road, McKinney, Texas",
 
-  brideParents: "D/o Mrs. Komala and Sathyanarayana Khandate",
-  groomParents: "S/o Mrs. Vrinda and Hemant Kamat",
+  brideParents: "D/o Mrs. Komala and Mr. Sathyanarayana Khandate",
+  groomParents: "S/o Mrs. Vrinda and Mr. Hemant Kamat",
 
   googleMapsLink:
     "https://maps.google.com/?q=Soaring%20Heights%20Ranch%20145%20Arrow%20Country%20Road%20McKinney%20Texas",
